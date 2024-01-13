@@ -1,88 +1,89 @@
 import React from "react";
-import {Text, View} from "react-native"
+import { Text, View } from "react-native";
+
 // Styles
 const styles = {
   app: {
-    flex: 4, // the number of columns you want to devide the screen into
-    marginHorizontal: "auto",
-    width: 400,
-    backgroundColor: "red",
+    flex: 1,
+    marginHorizontal: "auto"
+  },
+  headerFooterRow: {
+    flex: 1, 
+  },
+  mainRow: {
+    flex: 3, 
   },
   row: {
     flexDirection: "row",
-  },
-  "1col": {
-    backgroundColor: "lightblue",
-    borderColor: "#fff",
-    borderWidth: 1,
     flex: 1,
   },
-  "2col": {
-    backgroundColor: "green",
-    borderColor: "#fff",
-    borderWidth: 1,
-    flex: 2,
+  col: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  "3col": {
-    backgroundColor: "orange",
-    borderColor: "#fff",
-    borderWidth: 1,
-    flex: 3,
+  smallCol: {
+    flex: 1, 
+    backgroundColor: "lightblue",
   },
-  "4col": {
-    flex: 4,
+  largeCol: {
+    flex: 2, 
+    backgroundColor: "blue",
   },
 };
 
-// RN Code
-const Col = ({ numRows, children }) => {
-  return <View style={styles[`${numRows}col`]}>{children}</View>;
+const Col = ({ style, children }) => {
+  return <View style={[styles.col, style]}>{children}</View>;
 };
 
-const Row = ({ children }) => <View style={styles.row}>{children}</View>;
+const Row = ({ style, children }) => (
+  <View style={[styles.row, style]}>{children}</View>
+);
 
 const App = () => {
   return (
     <View style={styles.app}>
       {/* Header */}
-      <Row>
-        <Col numRows={1}>
-          <Text>First column</Text>
+      <Row style={styles.headerFooterRow}>
+        <Col style={styles.smallCol}>
+          <Text>Left column</Text>
         </Col>
-        <Col numRows={3}>
-          <Text>Second Column</Text>
+        <Col style={styles.largeCol}>
+          <Text>Right Column</Text>
         </Col>
       </Row>
-      <View>
-        <Row>
-          <Col numRows={1}>
-            <Text>Main square</Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col numRows={3}>
-            <Text>First column</Text>
-          </Col>
-          <Col numRows={3}>
-            <Text>Second column</Text>
-          </Col>
-          <Col numRows={3}>
-            <Text>Third column</Text>
-          </Col>
-        </Row>
-        {/* Footer */}
-        <Row>
-          <Col numRows={1}>
-            <Text>Blue footer</Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col numRows={1}>
-            <Text>Light blue footer</Text>
-          </Col>
-        </Row>
-      </View>
+      {/* Main Content */}
+      <Row style={styles.mainRow}>
+        <Col style={{ backgroundColor: "lightgreen" }}>
+          <Text>Main square</Text>
+        </Col>
+      </Row>
+      {/* Three Columns */}
+      <Row>
+        <Col style={{ backgroundColor: "green" }}>
+          <Text>First column</Text>
+        </Col>
+        <Col style={{ backgroundColor: "lightgreen" }}>
+          <Text>Second column</Text>
+        </Col>
+        <Col style={{ backgroundColor: "green" }}>
+          <Text>Third column</Text>
+        </Col>
+      </Row>
+      {/* Footer 1 */}
+      <Row style={styles.headerFooterRow}>
+        <Col style={{ backgroundColor: "lightblue" }}>
+          <Text>First Footer</Text>
+        </Col>
+      </Row>
+      {/* Footer 2 */}
+      <Row style={styles.headerFooterRow}>
+        <Col style={{ backgroundColor: "blue" }}>
+          <Text>Second Footer</Text>
+        </Col>
+      </Row>
     </View>
   );
-}
-export default App
+};
+
+export default App;
