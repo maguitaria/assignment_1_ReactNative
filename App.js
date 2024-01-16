@@ -1,87 +1,65 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Dimensions, Button, Image } from "react-native";
+import styles from "./styles";
 
-// Styles
-const styles = {
-  app: {
-    flex: 1,
-    marginHorizontal: "auto",
-  },
-  headerFooterRow: {
-    flex: 1,
-  },
-  mainRow: {
-    flex: 3,
-  },
-  row: {
-    flexDirection: "row",
-    flex: 1,
-  },
-  col: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  smallCol: {
-    flex: 1,
-    backgroundColor: "#50c3f7",
-  },
-  largeCol: {
-    flex: 2,
-    backgroundColor: "#0293c4",
-  },
-};
-
-const Col = ({ style }) => {
-  return <View style={[styles.col, style]}></View>;
-};
-
-const Row = ({ style, children }) => (
-  <View style={[styles.row, style]}>{children}</View>
-);
+const screenWidth = Dimensions.get("window").width;
 
 const App = () => {
   return (
-    <View style={styles.app}>
-      {/* Header */}
-      <Row style={styles.headerFooterRow}>
-        <Col style={styles.smallCol}>
-         
-        </Col>
-        <Col style={styles.largeCol}>
-         
-        </Col>
-      </Row>
-      {/* Main Content */}
-      <Row style={styles.mainRow}>
-        <Col style={{ backgroundColor: "#7cb342" }}>
-       
-        </Col>
-      </Row>
-      {/* Three Columns */}
-      <Row>
-        <Col style={{ backgroundColor: "green" }}>
-         
-        </Col>
-        <Col style={{ backgroundColor: "lightgreen" }}>
-         
-        </Col>
-        <Col style={{ backgroundColor: "green" }}>
-         
-        </Col>
-      </Row>
-      {/* Footer 1 */}
-      <Row style={styles.headerFooterRow}>
-        <Col style={{ backgroundColor: "#50c3f7" }}>
-        
-        </Col>
-      </Row>
-      {/* Footer 2 */}
-      <Row style={styles.headerFooterRow}>
-        <Col style={{ backgroundColor: "#0293c4" }}>
-        
-        </Col>
-      </Row>
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <View style={styles.roundedContainer}>
+          <View style={styles.iconContainer}>
+            <Image
+              source={require("./assets/adaptive-icon.png")}
+              style={styles.icon}
+            />
+          </View>
+          <View style={styles.tickContainer}>
+            <Text style={styles.tick}>✓</Text>
+          </View>
+        </View>
+
+        <Text style={styles.textSmall}>
+          Sent successfully to <strong>Lela Crawford</strong>
+        </Text>
+
+        <View style={styles.profileContainer}>
+          <View style={styles.roundedContainer}>
+            <Image
+              source={require("./assets/favicon.png")}
+              style={styles.icon}
+            />
+          </View>
+          <View style={styles.profileInfo}>
+            <Text style={styles.textSmall}>
+              <strong>John Crawford</strong>
+            </Text>
+            <Text style={styles.textSmall}>John123@gmail.com</Text>
+          </View>
+        </View>
+
+        {/* Centered amount */}
+        <View style={styles.centeredAmount}>
+          <Text style={styles.amount}>$100.00</Text>
+        </View>
+<br/>
+       <View style={{
+            height: 2,
+            backgroundColor: '#eeeeee',
+            alignSelf: 'stretch'
+        }} />
+
+        <Text style={styles.textSmall}>
+          Sent successfully to <strong>12 January 2018.</strong> <br/> Your reference
+          number is 98920852
+        </Text>
+
+        {/* "Continue" button at the end */}
+        <View style={styles.buttonContainer}>
+          <Button title="Continue" style={styles.button} />
+        </View>
+      </View>
     </View>
   );
 };
