@@ -5,13 +5,13 @@ import { Text, View } from "react-native";
 const styles = {
   app: {
     flex: 1,
-    marginHorizontal: "auto"
+    marginHorizontal: "auto",
   },
   headerFooterRow: {
-    flex: 1, 
+    flex: 1,
   },
   mainRow: {
-    flex: 3, 
+    flex: 3,
   },
   row: {
     flexDirection: "row",
@@ -23,17 +23,17 @@ const styles = {
     alignItems: "center",
   },
   smallCol: {
-    flex: 1, 
-    backgroundColor: "lightblue",
+    flex: 1,
+    backgroundColor: "#50c3f7",
   },
   largeCol: {
-    flex: 2, 
-    backgroundColor: "blue",
+    flex: 2,
+    backgroundColor: "#0293c4",
   },
 };
 
-const Col = ({ style, children }) => {
-  return <View style={[styles.col, style]}>{children}</View>;
+const Col = ({ style }) => {
+  return <View style={[styles.col, style]}></View>;
 };
 
 const Row = ({ style, children }) => (
@@ -46,40 +46,40 @@ const App = () => {
       {/* Header */}
       <Row style={styles.headerFooterRow}>
         <Col style={styles.smallCol}>
-          <Text>Left column</Text>
+         
         </Col>
         <Col style={styles.largeCol}>
-          <Text>Right Column</Text>
+         
         </Col>
       </Row>
       {/* Main Content */}
       <Row style={styles.mainRow}>
-        <Col style={{ backgroundColor: "lightgreen" }}>
-          <Text>Main square</Text>
+        <Col style={{ backgroundColor: "#7cb342" }}>
+       
         </Col>
       </Row>
       {/* Three Columns */}
       <Row>
         <Col style={{ backgroundColor: "green" }}>
-          <Text>First column</Text>
+         
         </Col>
         <Col style={{ backgroundColor: "lightgreen" }}>
-          <Text>Second column</Text>
+         
         </Col>
         <Col style={{ backgroundColor: "green" }}>
-          <Text>Third column</Text>
+         
         </Col>
       </Row>
       {/* Footer 1 */}
       <Row style={styles.headerFooterRow}>
-        <Col style={{ backgroundColor: "lightblue" }}>
-          <Text>First Footer</Text>
+        <Col style={{ backgroundColor: "#50c3f7" }}>
+        
         </Col>
       </Row>
       {/* Footer 2 */}
       <Row style={styles.headerFooterRow}>
-        <Col style={{ backgroundColor: "blue" }}>
-          <Text>Second Footer</Text>
+        <Col style={{ backgroundColor: "#0293c4" }}>
+        
         </Col>
       </Row>
     </View>
