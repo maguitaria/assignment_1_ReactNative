@@ -12,12 +12,18 @@ const App = () => {
         {/* Icon and Success Message */}
         <View style={styles.textCenter}>
           <View style={styles.iconContainer}>
-            <FontAwesomeIcon icon={faCheckCircle} style={styles.checkIcon} />
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              size={87}
+              style={styles.checkIcon}
+            />
           </View>
-          <Text style={styles.successMessage}>
-            Sent successfully to Lela Crawford
+          <Text style={styles.textSmall}>
+            Sent successfully to{" "}
+            <Text style={{ fontWeight: "bold", color: "black" }}>
+              Lela Crawford{" "}
+            </Text>
           </Text>
-        
         </View>
 
         {/* Amount */}
@@ -41,9 +47,11 @@ const App = () => {
         {/* Transaction Details */}
         <View style={styles.detailsContainer}>
           <Text style={styles.textSmall}>
-            Sent successfully on{" "}
-            <Text style={styles.boldText}>12 January 2018.</Text>
-            {"\n"}Your reference number is 98920852
+            Transaction done on {""}
+            <Text style={{ fontWeight: "bold", color: "black" }}>
+              12 January 2018.
+            </Text>
+            {"\n"}Your reference number is 98920852.
           </Text>
         </View>
 
@@ -51,8 +59,10 @@ const App = () => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.continueButton}>
             <LinearGradient
-              colors={["rgba(255,138,101,1)", "rgba(255,114,94,1)"]} // Replace with your desired colors
+              colors={["#F08058", "#406A69"]}
               style={styles.gradientButton}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
             >
               <Text style={styles.buttonText}>Continue</Text>
             </LinearGradient>
