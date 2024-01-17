@@ -10,6 +10,20 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
   },
+  headerContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 16,
+    marginBottom: 16,
+  },
+  tickContainer: {
+    backgroundColor: "#FFC0CB", // pink color
+    width: 64, // Set the size of the tick container
+    height: 64, // Set the size of the tick container
+    borderRadius: 32, // half of the width and height to make it a circle
+    alignItems: "center",
+    justifyContent: "center",
+  },
   card: {
     width: screenWidth * 0.7, // 80% of the screen width
     minHeight: 600, // Minimum height to ensure content is visible
@@ -88,15 +102,19 @@ const styles = {
     fontWeight: "bold",
   },
   buttonContainer: {
-    alignSelf: "flex-center",
+    marginTop: 16,
   },
   continueButton: {
-    marginTop: 20,
-    backgroundColor:
-      "linear-gradient(90deg, rgba(255,138,101,1) 0%, rgba(255,114,94,1) 100%)",
-    borderRadius: 30,
-    paddingVertical: 10,
-    alignItems: "center",
+    borderRadius: 20,
+  },
+  gradientButton: {
+    paddingVertical: 12,
+    borderRadius: 20,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: "#FFFFFF",
+    textAlign: "center",
   },
   profileContainer: {
     flexDirection: "row", // Align items horizontally
@@ -105,12 +123,13 @@ const styles = {
   detailsContainer: {
     flexDirection: "row", // Align items horizontally
     alignItems: "center", // Center items vertically
-    paddingTop:35
+    paddingTop: 35,
+    marginVertical: 10,
   },
   userDetails: {
     flexDirection: "row",
     padding: 5,
-    paddingEnd: 10,
+    marginVertical: 10,
   },
   profileImage: {
     width: 48,
@@ -131,6 +150,12 @@ const styles = {
 
   profileInfo: {
     marginLeft: 10, // Adjust the margin as needed
+  },
+  separator: {
+    height: 2,
+    backgroundColor: "black",
+    alignSelf: "stretch",
+    marginVertical: 10,
   },
 };
 export default styles;

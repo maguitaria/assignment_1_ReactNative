@@ -1,34 +1,29 @@
 import React from "react";
-import { Text, View, Dimensions, Button, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { TouchableOpacity } from "react-native-web";
-
-const screenWidth = Dimensions.get("window").width;
+import { LinearGradient } from "expo-linear-gradient";
 
 const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <View style={styles.roundedContainer}>
+        {/* Icon and Success Message */}
+        <View style={styles.textCenter}>
           <View style={styles.iconContainer}>
-            <FontAwesomeIcon icon={faCheckCircle} size={32} color="green" />
+            <FontAwesomeIcon icon={faCheckCircle} style={styles.checkIcon} />
           </View>
-          <View style={styles.tickContainer}>
-            <Text style={styles.tick}>✓</Text>
-          </View>
-        </View>
-
-        <View style={styles.userDetails}>
-          <Text style={styles.textSmall}>
-            Sent successfully to <strong>Lela Crawford</strong>
+          <Text style={styles.successMessage}>
+            Sent successfully to Lela Crawford
           </Text>
+        
         </View>
 
+        {/* Amount */}
         <Text style={styles.amount}>$100.00</Text>
 
-        {/* User details */}
+        {/* User Details */}
         <View style={styles.userDetails}>
           <Image
             style={styles.profileImage}
@@ -40,28 +35,28 @@ const App = () => {
           </View>
         </View>
 
-        <View>
-          <View
-            style={{
-              height: 2,
-              backgroundColor: "#eeeeee",
-              alignSelf: "stretch",
-              padding: 2
-            }}
-          />
-        </View>
+        {/* Separator */}
+        <View style={styles.separator} />
 
+        {/* Transaction Details */}
         <View style={styles.detailsContainer}>
           <Text style={styles.textSmall}>
             Sent successfully on{" "}
-            <Text style={{ fontWeight: "bold" }}>12 January 2018.</Text>
+            <Text style={styles.boldText}>12 January 2018.</Text>
             {"\n"}Your reference number is 98920852
           </Text>
         </View>
 
-        {/* "Continue" button at the end */}
+        {/* Continue Button */}
         <View style={styles.buttonContainer}>
-          <TouchableOpacity title="Continue" style={styles.continueButton} />
+          <TouchableOpacity style={styles.continueButton}>
+            <LinearGradient
+              colors={["rgba(255,138,101,1)", "rgba(255,114,94,1)"]} // Replace with your desired colors
+              style={styles.gradientButton}
+            >
+              <Text style={styles.buttonText}>Continue</Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
