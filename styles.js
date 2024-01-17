@@ -36,7 +36,7 @@ const styles = {
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
-    paddingEnd: 25
+    paddingEnd: 25,
   },
   iconContainer: {
     width: screenWidth * 0.2,
@@ -67,36 +67,70 @@ const styles = {
     fontSize: 24,
     color: "white",
   },
-   textSmall: {
+  textSmall: {
     top: screenWidth / 200,
     padding: screenWidth / 78,
     color: "black",
   },
-   lineStyle:{
-        borderWidth: 0.5,
-        borderColor:'black',
-        margin:10,
-   },
-   // New styles for centered amount and button container
+  lineStyle: {
+    borderWidth: 0.5,
+    borderColor: "black",
+    margin: 10,
+  },
+  // New styles for centered amount and button container
   centeredAmount: {
     alignItems: "center",
   },
   amount: {
     fontSize: 28,
+    padding: 5,
+    color: "#3F6C6C",
+    fontWeight: "bold",
   },
-   buttonContainer: {
+  buttonContainer: {
     alignSelf: "flex-center",
-
+  },
+  continueButton: {
+    marginTop: 20,
+    backgroundColor:
+      "linear-gradient(90deg, rgba(255,138,101,1) 0%, rgba(255,114,94,1) 100%)",
+    borderRadius: 30,
+    paddingVertical: 10,
+    alignItems: "center",
   },
   profileContainer: {
-  flexDirection: "row", // Align items horizontally
-  alignItems: "center", // Center items vertically
+    flexDirection: "row", // Align items horizontally
+    alignItems: "center", // Center items vertically
+  },
+  detailsContainer: {
+    flexDirection: "row", // Align items horizontally
+    alignItems: "center", // Center items vertically
+    paddingTop:35
+  },
+  userDetails: {
+    flexDirection: "row",
+    padding: 5,
+    paddingEnd: 10,
+  },
+  profileImage: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+  },
+  userInfo: {
+    marginLeft: 10,
+  },
+  userName: {
+    fontSize: 16,
+    fontWeight: "500",
+  },
+  userEmail: {
+    fontSize: 12,
+    color: "gray",
+  },
 
-},
-
-profileInfo: {
-  marginLeft: 10, // Adjust the margin as needed
-},
-
+  profileInfo: {
+    marginLeft: 10, // Adjust the margin as needed
+  },
 };
 export default styles;
